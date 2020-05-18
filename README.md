@@ -1,4 +1,4 @@
-#Netwave Camera
+# Netwave Camera
 This is a small package for controlling Netwave type IP cameras. This was created by reverse
 engineering the web interface for an Airsight XC36A IP camera, but should work for a wide
 range of devices. The camera identifies itself as a Netwave device in HTTP requests, but 
@@ -7,7 +7,7 @@ is widespread. This does not intend to replace the admin dashboard, so configuri
 and user settings needs to be done from the original dashboard. All of the functionality of the main
 video streaming dashboard is recreated in this API. 
 
-##Features:
+## Features
 - Pan tilt functionality
 - Brightness and contrast adjustment
 - Resolution and refresh rate configuration
@@ -16,5 +16,12 @@ video streaming dashboard is recreated in this API.
 - Preset location setting and traveling
 - Auto-centering
 
-###Original Dashoard:
-![Streaming dashboard](https://github.com/TheLogicMaster/Netwave-Camera/media/dashboard.png)
+## Original Dashoard
+![Streaming dashboard](media/dashboard.png)
+
+## Installation
+```
+pip install netwave-camera
+```
+
+## Usage
