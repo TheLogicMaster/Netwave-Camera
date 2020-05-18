@@ -17,6 +17,7 @@ video streaming dashboard is recreated in this API.
 - Auto-centering
 
 ## Original Dashoard
+The notes from reverse engineering the camera API are in the media directory. 
 ![Streaming dashboard](media/dashboard.png)
 
 ## Installation
