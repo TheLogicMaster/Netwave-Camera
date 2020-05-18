@@ -13,7 +13,7 @@ video streaming dashboard is recreated in this API.
 - Resolution and refresh rate configuration
 - IO enabling and disabling for X10/Alarm functionality
 - Horizontal and vertical patrolling control
-- Preset location setting and traveling
+- Preset location setting and recalling with 15 slots
 - Auto-centering
 
 ## Original Dashoard
