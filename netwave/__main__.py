@@ -273,7 +273,8 @@ def main():
 
     param_parser = subparsers.add_parser('set', help='Set a camera parameter')
     param_parser.add_argument('param', type=str, help='Parameter name',
-                              choices=['resolution', 'orientation', 'brightness', 'contrast', 'mode'])
+                              choices=['resolution', 'orientation', 'brightness', 'contrast', 'mode',
+                                       'mirror_horizontal', 'mirror_vertical'])
     param_parser.add_argument('value', type=int, help='Parameter value')
 
     subparsers.add_parser('info', help='Get camera info')
