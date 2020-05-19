@@ -56,6 +56,6 @@ cam.stop_movement()
 ```
 
 ## Documentation
-The pydoc API documentaion is availible in the media directory along with the reverse engineering notes
+The pydoc API documentaion is availible in the docs directory along with the reverse engineering notes
 
-![Streaming dashboard](media/dashboard.png)
+![Streaming dashboard](docs/dashboard.png)
