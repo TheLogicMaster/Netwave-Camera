@@ -16,13 +16,46 @@ video streaming dashboard is recreated in this API.
 - Preset location setting and recalling with 15 slots
 - Auto-centering
 
-## Original Dashoard
-The notes from reverse engineering the camera API are in the media directory. 
-![Streaming dashboard](media/dashboard.png)
-
 ## Installation
-```
+```shell script
 pip install netwave-camera
 ```
 
-## Usage
+## CLI Usage
+All commands and parameters are accessible from the CLI program
+
+```shell script
+# Set brightness from command line (integer from 0 to 15)
+python3 netwave http://url:port/ --user=admin password set brightness 10
+
+# Enable vertical patrolling
+python3 netwave http://url:port/ --user=admin password command patrol_vertical
+
+# View general help info
+python3 netwave -h
+
+# View all commands
+python3 netwave http://url:port/ password command -h
+```
+
+## Python Usage
+```python
+from netwave import NetwaveCamera
+
+# Create camera object
+cam = NetwaveCamera('http://url:port/', 'username', 'password', timeout=5)
+
+# Update local camera object with IP camera data
+cam.update_full()
+
+# Turn left for ~2 seconds
+import time
+cam.move_left()
+time.sleep(2)
+cam.stop_movement()
+```
+
+## Documentation
+The pydoc API documentaion is availible in the media directory along with the reverse engineering notes
+
+![Streaming dashboard](media/dashboard.png)

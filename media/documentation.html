@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: package netwave</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>netwave</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href="..">index</a><br><a href="file:/home/justin/Programming/Netwave-Camera/netwave/__init__.py">/home/justin/Programming/Netwave-Camera/netwave/__init__.py</a></font></td></tr></table>
+    <p><tt>Init&nbsp;file&nbsp;for&nbsp;Netwave&nbsp;Camera</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Package Contents</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="netwave.__main__.html">__main__</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="netwave.__main__.html#NetwaveCamera">netwave.__main__.NetwaveCamera</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="NetwaveCamera">class <strong>NetwaveCamera</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#NetwaveCamera">NetwaveCamera</a>(address,&nbsp;username='admin',&nbsp;password='',&nbsp;timeout=5)<br>
+&nbsp;<br>
+A&nbsp;local&nbsp;representation&nbsp;of&nbsp;a&nbsp;Netwave&nbsp;camera<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="NetwaveCamera-__init__"><strong>__init__</strong></a>(self, address, username='admin', password='', timeout=5)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>Return&nbsp;str(self).</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-factor_reset_camera"><strong>factor_reset_camera</strong></a>(self)</dt><dd><tt>Factory&nbsp;resets&nbsp;the&nbsp;camera</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_alias"><strong>get_alias</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;camera's&nbsp;alias</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_brightness"><strong>get_brightness</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;local&nbsp;brightness&nbsp;from&nbsp;0&nbsp;to&nbsp;15</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_contrast"><strong>get_contrast</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;local&nbsp;contrast&nbsp;from&nbsp;0&nbsp;to&nbsp;6</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_id"><strong>get_id</strong></a>(self)</dt><dd><tt>Returns&nbsp;the&nbsp;camera's&nbsp;id</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_info"><strong>get_info</strong></a>(self)</dt><dd><tt>Returns&nbsp;a&nbsp;dictionary&nbsp;of&nbsp;most&nbsp;camera&nbsp;settings</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_mirror_horizontal"><strong>get_mirror_horizontal</strong></a>(self)</dt><dd><tt>Get&nbsp;whether&nbsp;the&nbsp;screen&nbsp;is&nbsp;horizontally&nbsp;mirrored&nbsp;or&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_mirror_vertical"><strong>get_mirror_vertical</strong></a>(self)</dt><dd><tt>Get&nbsp;whether&nbsp;the&nbsp;screen&nbsp;is&nbsp;vertically&nbsp;mirrored&nbsp;or&nbsp;not</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_mode"><strong>get_mode</strong></a>(self)</dt><dd><tt>Gets&nbsp;the&nbsp;local&nbsp;video&nbsp;mode&nbsp;as&nbsp;an&nbsp;integer&nbsp;from&nbsp;0&nbsp;to&nbsp;2,&nbsp;based&nbsp;on&nbsp;the&nbsp;constants&nbsp;above</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_orientation"><strong>get_orientation</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;orientation&nbsp;as&nbsp;a&nbsp;two&nbsp;bit&nbsp;integer&nbsp;representation&nbsp;of&nbsp;the&nbsp;two&nbsp;mirrored&nbsp;values&nbsp;(vertical,&nbsp;horizontal)</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-get_resolution"><strong>get_resolution</strong></a>(self)</dt><dd><tt>Get&nbsp;the&nbsp;local&nbsp;resolution&nbsp;as&nbsp;an&nbsp;integer&nbsp;of&nbsp;either&nbsp;2,&nbsp;8,&nbsp;or&nbsp;32,&nbsp;reference&nbsp;the&nbsp;resolution&nbsp;constants&nbsp;above</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_center"><strong>move_center</strong></a>(self)</dt><dd><tt>Re-center's&nbsp;the&nbsp;camera</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_down"><strong>move_down</strong></a>(self)</dt><dd><tt>Rotates&nbsp;downward</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_down_left"><strong>move_down_left</strong></a>(self)</dt><dd><tt>Rotates&nbsp;down&nbsp;left</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_down_right"><strong>move_down_right</strong></a>(self)</dt><dd><tt>Rotates&nbsp;down&nbsp;right</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_left"><strong>move_left</strong></a>(self)</dt><dd><tt>Rotates&nbsp;left</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_right"><strong>move_right</strong></a>(self)</dt><dd><tt>Rotates&nbsp;right</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_up"><strong>move_up</strong></a>(self)</dt><dd><tt>Rotates&nbsp;upward</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_up_left"><strong>move_up_left</strong></a>(self)</dt><dd><tt>Rotates&nbsp;up&nbsp;left</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-move_up_right"><strong>move_up_right</strong></a>(self)</dt><dd><tt>Rotates&nbsp;up&nbsp;right</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-patrol_horizontal"><strong>patrol_horizontal</strong></a>(self)</dt><dd><tt>Initiate&nbsp;horizontal&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-patrol_vertical"><strong>patrol_vertical</strong></a>(self)</dt><dd><tt>Initiate&nbsp;vertical&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-pelco_patrol_horizontal"><strong>pelco_patrol_horizontal</strong></a>(self)</dt><dd><tt>Initiate&nbsp;Pelco&nbsp;horizontal&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-pelco_stop_patrol_horizontal"><strong>pelco_stop_patrol_horizontal</strong></a>(self)</dt><dd><tt>Terminate&nbsp;Pelco&nbsp;horizontal&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-recall_preset"><strong>recall_preset</strong></a>(self, preset)</dt><dd><tt>Loads&nbsp;a&nbsp;saved&nbsp;preset&nbsp;position&nbsp;in&nbsp;a&nbsp;slot&nbsp;from&nbsp;1&nbsp;to&nbsp;15&nbsp;and&nbsp;returns&nbsp;to&nbsp;it</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-restart_camera"><strong>restart_camera</strong></a>(self)</dt><dd><tt>Restarts&nbsp;the&nbsp;camera</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_brightness"><strong>set_brightness</strong></a>(self, brightness)</dt><dd><tt>Set&nbsp;the&nbsp;camera's&nbsp;brightness&nbsp;to&nbsp;an&nbsp;integer&nbsp;from&nbsp;0&nbsp;to&nbsp;15</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_contrast"><strong>set_contrast</strong></a>(self, contrast)</dt><dd><tt>Set&nbsp;the&nbsp;camera's&nbsp;contrast&nbsp;value&nbsp;to&nbsp;an&nbsp;integer&nbsp;from&nbsp;0&nbsp;to&nbsp;6</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_mirror_horizontal"><strong>set_mirror_horizontal</strong></a>(self, mirrored)</dt><dd><tt>Sets&nbsp;the&nbsp;horizontal&nbsp;video&nbsp;mirror&nbsp;boolean</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_mirror_vertical"><strong>set_mirror_vertical</strong></a>(self, mirrored)</dt><dd><tt>Sets&nbsp;the&nbsp;vertical&nbsp;video&nbsp;mirror&nbsp;boolean</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_mode"><strong>set_mode</strong></a>(self, mode)</dt><dd><tt>Sets&nbsp;the&nbsp;camera's&nbsp;video&nbsp;mode&nbsp;to&nbsp;an&nbsp;integer&nbsp;from&nbsp;0&nbsp;to&nbsp;2,&nbsp;see&nbsp;above&nbsp;constants</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_orientation"><strong>set_orientation</strong></a>(self, orientation)</dt><dd><tt>Sets&nbsp;the&nbsp;two&nbsp;bit&nbsp;orientation&nbsp;value&nbsp;on&nbsp;the&nbsp;camera</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_preset"><strong>set_preset</strong></a>(self, preset)</dt><dd><tt>Saves&nbsp;a&nbsp;preset&nbsp;position&nbsp;in&nbsp;a&nbsp;slot&nbsp;from&nbsp;1&nbsp;to&nbsp;15&nbsp;with&nbsp;the&nbsp;camera's&nbsp;current&nbsp;position</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-set_resolution"><strong>set_resolution</strong></a>(self, resolution)</dt><dd><tt>Set&nbsp;the&nbsp;camera's&nbsp;resolution&nbsp;value&nbsp;to&nbsp;either&nbsp;2,&nbsp;8,&nbsp;or&nbsp;32,&nbsp;see&nbsp;above&nbsp;constants</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-stop_movement"><strong>stop_movement</strong></a>(self)</dt><dd><tt>The&nbsp;termination&nbsp;command&nbsp;for&nbsp;the&nbsp;movements</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-stop_patrol_horizontal"><strong>stop_patrol_horizontal</strong></a>(self)</dt><dd><tt>Terminate&nbsp;horizontal&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-stop_patrol_vertical"><strong>stop_patrol_vertical</strong></a>(self)</dt><dd><tt>Terminate&nbsp;vertical&nbsp;patrolling</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-turn_io_off"><strong>turn_io_off</strong></a>(self)</dt><dd><tt>Turn&nbsp;off&nbsp;X10&nbsp;type&nbsp;IO</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-turn_io_on"><strong>turn_io_on</strong></a>(self)</dt><dd><tt>Turn&nbsp;on&nbsp;X10&nbsp;type&nbsp;IO</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-update_full"><strong>update_full</strong></a>(self)</dt><dd><tt>Full&nbsp;update&nbsp;of&nbsp;camera&nbsp;data&nbsp;including&nbsp;info&nbsp;and&nbsp;video&nbsp;settings.&nbsp;Generally&nbsp;only&nbsp;used&nbsp;on&nbsp;initial&nbsp;connection</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-update_info"><strong>update_info</strong></a>(self)</dt><dd><tt>Updates&nbsp;local&nbsp;info&nbsp;of&nbsp;settings&nbsp;and&nbsp;such&nbsp;from&nbsp;camera</tt></dd></dl>
+
+<dl><dt><a name="NetwaveCamera-update_video_settings"><strong>update_video_settings</strong></a>(self)</dt><dd><tt>Updates&nbsp;local&nbsp;video&nbsp;settings&nbsp;from&nbsp;camera</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>resolution_160_x_120</strong> = 2</dl>
+
+<dl><dt><strong>resolution_320_x_240</strong> = 8</dl>
+
+<dl><dt><strong>resolution_640_x_480</strong> = 32</dl>
+
+<dl><dt><strong>video_mode_50_hz</strong> = 0</dl>
+
+<dl><dt><strong>video_mode_60_hz</strong> = 1</dl>
+
+<dl><dt><strong>video_mode_outdoor</strong> = 2</dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__all__</strong> = ['NetwaveCamera']</td></tr></table>
+</body></html>

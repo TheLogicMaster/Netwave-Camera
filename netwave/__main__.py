@@ -1,6 +1,10 @@
 #!/usr/bin/env python
+
+import argparse
 import os
 import re
+import sys
+
 import requests
 from requests.auth import HTTPBasicAuth
 
@@ -26,8 +30,6 @@ class NetwaveCamera:
         self._mode = 0
         self._orientation = 0
         self._info = {}
-
-        self.update_full()
 
     def __str__(self):
         text = 'Info: ' + str(self._info) + ', Orientation: ' + str(self._orientation) + ', Mode: ' + str(self._mode)
@@ -107,57 +109,75 @@ class NetwaveCamera:
         self._orientation = orientation
 
     def stop_movement(self):
+        """The termination command for the movements"""
         self._send_command(1)
 
     def move_up(self):
+        """Rotates upward"""
         self._send_command(0)
 
     def move_down(self):
+        """Rotates downward"""
         self._send_command(2)
 
     def move_left(self):
+        """Rotates left"""
         self._send_command(4)
 
     def move_right(self):
+        """Rotates right"""
         self._send_command(6)
 
     def move_up_left(self):
+        """Rotates up left"""
         self._send_command(90)
 
     def move_up_right(self):
+        """Rotates up right"""
         self._send_command(91)
 
     def move_down_left(self):
+        """Rotates down left"""
         self._send_command(92)
 
     def move_down_right(self):
+        """Rotates down right"""
         self._send_command(93)
 
     def move_center(self):
+        """Re-center's the camera"""
         self._send_command(25)
 
     def patrol_vertical(self):
+        """Initiate vertical patrolling"""
         self._send_command(26)
 
     def stop_patrol_vertical(self):
+        """Terminate vertical patrolling"""
         self._send_command(27)
 
     def patrol_horizontal(self):
+        """Initiate horizontal patrolling"""
         self._send_command(28)
 
     def stop_patrol_horizontal(self):
+        """Terminate horizontal patrolling"""
         self._send_command(29)
 
     def pelco_patrol_horizontal(self):
+        """Initiate Pelco horizontal patrolling"""
         self._send_command(20)
 
     def pelco_stop_patrol_horizontal(self):
+        """Terminate Pelco horizontal patrolling"""
         self._send_command(21)
 
     def turn_io_on(self):
+        """Turn on X10 type IO"""
         self._send_command(94)
 
     def turn_io_off(self):
+        """Turn off X10 type IO"""
         self._send_command(95)
 
     def set_preset(self, preset):
@@ -179,6 +199,14 @@ class NetwaveCamera:
     def get_info(self):
         """Returns a dictionary of most camera settings"""
         return self._info
+
+    def restart_camera(self):
+        """Restarts the camera"""
+        self._send_request('reboot.cgi')
+
+    def factor_reset_camera(self):
+        """Factory resets the camera"""
+        self._send_request('restore_factory.cgi')
 
     def update_full(self):
         """Full update of camera data including info and video settings. Generally only used on initial connection"""
@@ -215,6 +243,7 @@ class NetwaveCamera:
         return data
 
     def _send_request(self, path, params=None):
+        """Sends a get request to the camera"""
         values = {} if params is None else params
         response = requests.get(url=self.address + path, params=values, auth=self._auth, timeout=self.timeout)
         if response.status_code != 200:
@@ -223,6 +252,53 @@ class NetwaveCamera:
         return response.text
 
 
-if __name__ == '__main__':
-    c = NetwaveCamera('https://x10cam.thelogicmaster.com/', password='')
-    print(c)
+def main():
+    """Entrypoint for CLI program"""
+    parser = argparse.ArgumentParser(prog='netwave')
+    parser.add_argument('--timeout', type=int, default=5, help='Specify timeout(seconds)')
+    parser.add_argument('address', type=str, help='Address of camera')
+    parser.add_argument('--user', type=str, default='admin', help='Username of camera user')
+    parser.add_argument('password', type=str, help='Password of camera user')
+
+    subparsers = parser.add_subparsers(dest='function', help='Available sub-commands')
+
+    command_parser = subparsers.add_parser('command', help='Execute a command')
+    command_parser.add_argument('command', type=str, help='Command name',
+                                choices=['stop_movement', 'move_up', 'move_down', 'move_left', 'move_right',
+                                         'move_up_left', 'move_up_right', 'move_down_left', 'move_down_right',
+                                         'move_center', 'patrol_vertical', 'stop_patrol_vertical', 'horizontal_patrol',
+                                         'stop_horizontal_patrol', 'turn_io_on', 'turn_io_off', 'set_preset',
+                                         'recall_preset', 'restart_camera', 'factory_reset_camera'])
+    command_parser.add_argument('--preset', type=int, help='Preset id for saved position(1-15)', default=1)
+
+    param_parser = subparsers.add_parser('set', help='Set a camera parameter')
+    param_parser.add_argument('param', type=str, help='Parameter name',
+                              choices=['resolution', 'orientation', 'brightness', 'contrast', 'mode'])
+    param_parser.add_argument('value', type=int, help='Parameter value')
+
+    subparsers.add_parser('info', help='Get camera info')
+
+    args = vars(
+        parser.parse_args(sys.argv[1:]))
+
+    camera = NetwaveCamera(args['address'], args['user'], args['password'], args['timeout'])
+
+    if args['function'] == 'command':
+        command = getattr(camera, args['command'])
+        if 'preset' in args['command']:
+            command(args['preset'])
+        else:
+            command()
+        print('Executed command')
+
+    elif args['function'] == 'set':
+        getattr(camera, 'set_' + args['param'])(args['value'])
+        print('Sent parameter')
+
+    elif args['function'] == 'info':
+        camera.update_info()
+        print(camera.get_info())
+
+
+if __name__ == "__main__":
+    main()
