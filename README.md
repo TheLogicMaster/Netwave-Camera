@@ -18,7 +18,7 @@ video streaming dashboard is recreated in this API.
 
 ## Installation
 ```shell script
-pip install netwave-camera
+pip3 install netwave-camera
 ```
 
 ## CLI Usage
