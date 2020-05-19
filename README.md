@@ -1,13 +1,27 @@
-# Netwave Camera
-This is a small package for controlling Netwave type IP cameras. This was created by reverse
+# NetWave Camera API
+
+A simple Python API for interacting with an old NetWave compatible camera you have lying around
+somewhere or cheaply acquire.
+
+![Streaming dashboard](http://software-tecnico-libre.es/Images/nolang/2016/ip-cameras.jpg)
+
+## Purpose
+
+This is ideal for getting a little more life out of some perfectly good, though probably insecure
+IP cameras. Using a combination of Home Assistant and MotionEye, you can get fully automated Pan-Tilt
+IP cameras up and working with a beautiful and modern web interface and fully integrated with
+your existing home automation system. 
+
+## Background
+This is a small package for controlling NetWave type IP cameras. This was created by reverse
 engineering the web interface for an Airsight XC36A IP camera, but should work for a wide
-range of devices. The camera identifies itself as a Netwave device in HTTP requests, but 
+range of devices. The camera identifies itself as a NetWave device in HTTP requests, but 
 mentions Pelco dome cameras in JavaScript, so it can be assumed that the use of the firmware
 is widespread. This does not intend to replace the admin dashboard, so configuring the network
 and user settings needs to be done from the original dashboard. All of the functionality of the main
-video streaming dashboard is recreated in this API. 
-
-![Streaming dashboard](http://software-tecnico-libre.es/Images/nolang/2016/ip-cameras.jpg)
+video streaming dashboard is recreated in this API. The command line interface for this package is 
+primarily intended for debugging since it re-creates the camera object for every command, but it could
+also be used with some form of automation if not using Home Assistant.
 
 ## Features
 - Pan tilt functionality
@@ -17,8 +31,12 @@ video streaming dashboard is recreated in this API.
 - Horizontal and vertical patrolling control
 - Preset location setting and recalling with 15 slots
 - Auto-centering
+- Multi-camera support
 
-## Installation
+## Home Assistant Integration
+Coming soon
+
+## Manual Installation
 ```shell script
 pip3 install netwave-camera
 ```
