@@ -7,6 +7,8 @@ is widespread. This does not intend to replace the admin dashboard, so configuri
 and user settings needs to be done from the original dashboard. All of the functionality of the main
 video streaming dashboard is recreated in this API. 
 
+![Streaming dashboard](http://software-tecnico-libre.es/Images/nolang/2016/ip-cameras.jpg)
+
 ## Features
 - Pan tilt functionality
 - Brightness and contrast adjustment
@@ -56,6 +58,8 @@ cam.stop_movement()
 ```
 
 ## Documentation
-The pydoc API documentaion is availible in the docs directory along with the reverse engineering notes
+[pydoc API Documentation](https://thelogicmaster.github.io/Netwave-Camera/documentation.html)
+
+[Reverse Engineering Notes](https://thelogicmaster.github.io/Netwave-Camera/camera-reverse-engineering.html)
 
 ![Streaming dashboard](docs/dashboard.png)
