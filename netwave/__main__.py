@@ -266,8 +266,8 @@ def main():
     command_parser.add_argument('command', type=str, help='Command name',
                                 choices=['stop_movement', 'move_up', 'move_down', 'move_left', 'move_right',
                                          'move_up_left', 'move_up_right', 'move_down_left', 'move_down_right',
-                                         'move_center', 'patrol_vertical', 'stop_patrol_vertical', 'horizontal_patrol',
-                                         'stop_horizontal_patrol', 'turn_io_on', 'turn_io_off', 'set_preset',
+                                         'move_center', 'patrol_vertical', 'stop_patrol_vertical', 'patrol_horizontal',
+                                         'stop_patrol_horizontal', 'turn_io_on', 'turn_io_off', 'set_preset',
                                          'recall_preset', 'restart_camera', 'factory_reset_camera'])
     command_parser.add_argument('--preset', type=int, help='Preset id for saved position(1-15)', default=1)
 

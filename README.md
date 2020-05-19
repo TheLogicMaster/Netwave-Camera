@@ -9,7 +9,7 @@ somewhere or cheaply acquire.
 
 This is ideal for getting a little more life out of some perfectly good, though probably insecure
 IP cameras. Using a combination of Home Assistant and MotionEye, you can get fully automated Pan-Tilt
-IP cameras up and working with a beautiful and modern web interface and fully integrated with
+IP cameras up and working securely with a beautiful and modern web interface and fully integrated with
 your existing home automation system. 
 
 ## Background
