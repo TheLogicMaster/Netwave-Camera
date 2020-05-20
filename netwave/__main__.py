@@ -230,10 +230,9 @@ class NetwaveCamera:
         """Sends a video parameter to the camera"""
         self._send_request('camera_control.cgi', {'param': param, 'value': value})
 
-    def _send_command(self, command, params=None):
+    def _send_command(self, command):
         """Sends a command to the camera"""
-        values = {} if params is None else params
-        self._send_request('decoder_control.cgi', {'command': command, **values})
+        self._send_request('decoder_control.cgi', {'command': command})
 
     def _send_fetch(self, path, params=None):
         """Sends a request to fetch a dictionary of data"""
