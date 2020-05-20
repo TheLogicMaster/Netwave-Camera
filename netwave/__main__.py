@@ -208,6 +208,9 @@ class NetwaveCamera:
         """Factory resets the camera"""
         self._send_request('restore_factory.cgi')
 
+    def get_snapshot(self):
+        return requests.get(url=self.address + 'snapshot.cgi', stream=True, auth=self._auth, timeout=self.timeout).raw
+
     def update_full(self):
         """Full update of camera data including info and video settings. Generally only used on initial connection"""
         self.update_info()
@@ -237,7 +240,7 @@ class NetwaveCamera:
     def _send_fetch(self, path, params=None):
         """Sends a request to fetch a dictionary of data"""
         data = {}
-        for match in re.findall(r"(?<= )(.*)(=)('?)(.*[^'])('?)(?=;)", self._send_request(path, params)):
+        for match in re.findall(r"(?<= )(.*)(=)('?)(.*[^'])('?)(?=;)", self._send_request(path, params).text):
             data[match[0]] = match[3]
         return data
 
@@ -248,7 +251,7 @@ class NetwaveCamera:
         if response.status_code != 200:
             raise RuntimeError('Auth failed' if response.status_code == 401 else 'Request failed', response.request.url,
                                response.status_code)
-        return response.text
+        return response
 
 
 def main():
