@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="netwave-camera",
-    version="0.0.1",
+    version="0.0.2",
     author="Justin Marentette",
     author_email="justinmarentette11@gmail.com",
     description="A Netwave IP camera API",
