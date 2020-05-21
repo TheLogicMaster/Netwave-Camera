@@ -46,16 +46,16 @@ All commands and parameters are accessible from the CLI program
 
 ```shell script
 # Set brightness from command line (integer from 0 to 15)
-python3 netwave http://url:port/ --user=admin password set brightness 10
+python3 -m netwave http://url:port/ --user=admin password set brightness 10
 
 # Enable vertical patrolling
-python3 netwave http://url:port/ --user=admin password command patrol_vertical
+python3 -m netwave http://url:port/ --user=admin password command patrol_vertical
 
 # View general help info
-python3 netwave -h
+python3 -m netwave -h
 
 # View all commands
-python3 netwave http://url:port/ password command -h
+python3 -m netwave http://url:port/ password command -h
 ```
 
 ## Python Usage

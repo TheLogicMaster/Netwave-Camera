@@ -1,5 +1,5 @@
 """ Init file for Netwave Camera """
 
-from .__main__ import NetwaveCamera
+from .netwave import NetwaveCamera
 
 __all__ = ['NetwaveCamera']
