@@ -209,7 +209,9 @@ class NetwaveCamera:
         self._send_request('restore_factory.cgi')
 
     def get_snapshot(self):
-        return requests.get(url=self.address + 'snapshot.cgi', stream=True, auth=self._auth, timeout=self.timeout).raw
+        """Get a raw image snapshot from the camera"""
+        return requests.get(url=self.address + 'snapshot.cgi', stream=True, auth=self._auth,
+                            timeout=self.timeout).raw.data
 
     def update_full(self):
         """Full update of camera data including info and video settings. Generally only used on initial connection"""
