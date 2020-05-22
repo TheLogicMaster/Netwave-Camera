@@ -217,11 +217,11 @@ class NetwaveCamera:
     def update_video_settings(self):
         """Updates local video settings from camera"""
         settings = self._send_fetch('get_camera_params.cgi')
-        self._brightness = settings['brightness']
-        self._resolution = settings['resolution']
-        self._contrast = settings['contrast']
-        self._mode = settings['mode']
-        self._orientation = settings['flip']
+        self._brightness = int(settings['brightness'])
+        self._resolution = int(settings['resolution'])
+        self._contrast = int(settings['contrast'])
+        self._mode = int(settings['mode'])
+        self._orientation = int(settings['flip'])
 
     def update_info(self):
         """Updates local info of settings and such from camera """
