@@ -3,7 +3,7 @@
 A simple Python API for interacting with an old NetWave compatible camera you have lying around
 somewhere or cheaply acquire.
 
-![Streaming dashboard](http://software-tecnico-libre.es/Images/nolang/2016/ip-cameras.jpg)
+![NetWave cameras](http://software-tecnico-libre.es/Images/nolang/2016/ip-cameras.jpg)
 
 ## Purpose
 
@@ -34,7 +34,15 @@ also be used with some form of automation if not using Home Assistant.
 - Multi-camera support
 
 ## Home Assistant Integration
-Coming soon
+
+[Home Assistant documentation page](https://www.home-assistant.io/integrations/netwave)
+
+####Lovelace card example:
+An example Lovelace yaml config file is included in the docs directory. This Lovelace card demonstrates an element
+overlay for the camera feed that hooks into all of the camera command functionality, aside from a factory 
+reset button. 
+
+![Lovelace card](docs/lovelace.png)
 
 ## Manual Installation
 ```shell script
